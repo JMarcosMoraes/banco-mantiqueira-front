@@ -11,13 +11,25 @@ function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push("/dashboard");
+    try {
+      console.log("Login submit - redirecting to /dashboard");
+      router.push("/dashboard");
+      // fallback in case router.push doesn't navigate
+      setTimeout(() => {
+        if (window.location.pathname !== "/dashboard") {
+          window.location.href = "/dashboard";
+        }
+      }, 200);
+    } catch (err) {
+      console.error("router.push error:", err);
+      window.location.href = "/dashboard";
+    }
   };
 
   return (
     <div className="login-container">
       {/* Logo fora do card */}
-      <Image src={logo} alt="Banco Mantiqueira" className="bank-logo-outside" />
+      <Image src={logo} alt="Banco Mantiqueira" width={140} height={60} className="bank-logo-outside" />
       <div className="login-card">
         
         {/* Título */}
@@ -46,7 +58,7 @@ function Login() {
         <div className="secure-login">
           <h3>Login Seguro</h3>
           <div className="qr-section">
-            <Image src={qr} alt="QR Code" className="qr-image" />
+            <Image src={qr} alt="QR Code" width={120} height={120} className="qr-image" />
             <p>Acessar com QR Code</p>
           </div>
         </div>
