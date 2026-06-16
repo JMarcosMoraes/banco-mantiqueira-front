@@ -1,19 +1,29 @@
+"use client";
+
 import Image from "next/image";
 import "./Login.css";
-import logo from "../assets/Logo_marca_02.png";
+import { useRouter } from "next/navigation";
+import logo from "../assets/Logo_marca.png";
 import qr from "../assets/Logo_marca_02.png";
 
 function Login() {
+  const router = useRouter();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push("/dashboard");
+  };
+
   return (
     <div className="login-container">
-        {/* Logo fora do card */}
+      {/* Logo fora do card */}
       <Image src={logo} alt="Banco Mantiqueira" className="bank-logo-outside" />
       <div className="login-card">
         
         {/* Título */}
         <h2 className="access-title">Acesso ao Sistema</h2>
 
-         <form className="login-form">
+         <form className="login-form" onSubmit={handleSubmit}>
           <div className="input-group">
             <span className="input-icon">
               <i className="fas fa-user"></i>
