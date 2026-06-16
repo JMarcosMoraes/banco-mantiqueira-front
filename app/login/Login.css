@@ -1,0 +1,135 @@
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: url("../assets/fundo_mobile.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  display: flex;
+   flex-direction: column; /* Logo em cima do card */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.bank-logo-outside {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.login-card {
+  background-color: rgba(255, 255, 255, 0.85); 
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  max-width: 360px;
+  backdrop-filter: blur(6px); /* efeito moderno de vidro fosco */
+}
+
+.bank-logo {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.access-title {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+    .login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+    }
+
+    .login-form input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    }
+
+    .forgot-password {
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    color: #006400;
+    text-decoration: none;
+    margin-bottom: 20px;
+    }
+
+    .login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #008000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+    background-color: #006400;
+    }
+
+    .secure-login {
+    margin-top: 30px;
+    }
+
+    .qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .qr-image {
+    width: 450px;
+    height: 450px;
+    margin-bottom: 10px;
+    }
+
+    /* 🔹 Responsividade para mobile */
+    @media (max-width: 480px) {
+
+    .bank-logo-outside {
+        width: 200px;
+    } 
+    .login-card {
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .bank-logo {
+        width: 250px;
+    }
+
+    .access-title {
+        font-size: 16px;
+    }
+
+    .login-form input {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .login-button {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .qr-image {
+        width: 80px;
+        height: 80px;
+    }
+    }
