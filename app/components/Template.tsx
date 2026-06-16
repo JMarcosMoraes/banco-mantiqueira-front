@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import logo from "../assets/Logo_marca_02.png";
+import logo from "../assets/icone_header_2.png";
 
 type Props = { children?: React.ReactNode };
 
@@ -15,7 +15,7 @@ export default function Template({ children }: Props) {
       <header className="fixed top-0 left-0 right-0 z-30 flex items-center justify-center px-4 py-3 bg-transparent backdrop-blur-md">
         <div className="flex items-center justify-between w-full max-w-5xl">
           <div className="w-12" />
-          <Image src={logo} alt="Banco Mantiqueira" width={72} height={72} />
+          <Image src={logo} alt="Banco Mantiqueira" width={60} height={60} className="h-12 w-auto" />
           <button
             onClick={() => router.push("/profile")}
             aria-label="Perfil do usuário"
